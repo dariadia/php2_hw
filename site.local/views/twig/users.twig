@@ -1,0 +1,16 @@
+{% for user in users %}
+    <a href="/user/user?id={{user.id}}">
+        {{user.user_login}}
+    </a> <br>
+    <h5>{{user.user_name}}</h5>
+    {% if user.user_name == 'admin' %}
+        <h6>Удалять нельзя!</h6>
+    {% else %}
+        <a href="?/user/delete?id={{ user.id }}">
+            Удалить
+        </a>
+    {% endif %}
+    <hr>
+{% else %}
+    <li><em>no user found</em></li>
+{% endfor %}
