@@ -1,0 +1,9 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}Пользователь {{ user.user_login }}{% endblock %}
+
+{% block body %}
+    {{user.user_name}} // {{user.user_login}}
+    {{user.date | date("d/m/Y")}}
+    <hr>
+{% endblock %}
