@@ -12,19 +12,21 @@
 </head>
 <body>
     <img src="/img/1.png" alt="" width="50">
+    {% if isAdmin == true %}
+        <a href="/user"> админка: управление Пользователями</a>
+    {% endif %}
+
     {% if auth == true %}
         привет пользователь! спасибо что вы с нами
-    {% endif %}
+   
     <ul>
         <li><a href="/good">Товары</a></li>
         <li><a href="/basket">Корзина</a></li>
         <li><a href="/user/insert">оформить заказ </a></li>
-
-        {% if isAdmin == true %}
-        <li><a href="/user"> админка: управление Пользователями</a></li>
-        {% endif %}
         
     </ul>
+    {% endif %}
+    
     <div class="content">{% block body %}{% endblock %}</div>
 
 
