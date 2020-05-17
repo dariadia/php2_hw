@@ -1,0 +1,22 @@
+.plus-btn,
+.minus-btn,
+.delete-btn {
+    font-size: 20px;
+    color: red;
+}
+
+.description {
+    font-size: 22px;
+
+}
+
+.image {
+    width: 30px;
+    height: 30px;
+    border: 2px solid salmon;
+}
+
+.item {
+    border: 1px solid black;
+    border-bottom: 10px;
+}

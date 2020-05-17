@@ -1,0 +1,43 @@
+{% extends 'layouts/main.twig' %}
+
+{% block title %}   Моя корзина {% endblock %}
+
+{% block body %}
+ {% if basket[1] is defined %} 
+ 
+
+ <!-- если в массиве ничего нет, то шаблон не рендерится, иначе покажет товар -->
+    {% for good in basket %}
+    <form action="/basket/updateBasket?id={{ good.id }}" method="post">
+      <div class="item">
+        <h3> {{good.name}}</h3>
+  
+        <img class="image" src="#" alt="" />
+  
+        <div class="description">
+          {{good.price}} </br>
+          {{good.count}}
+        </div>
+  
+        <input type="number" name="count" value="{{good.count}}" class="quantity">
+
+    <h5 class="total-price">итого за товар {{good.price * good.count}}</h5> 
+     </div>
+    </form>
+    {% endfor %}
+
+
+ <!-- <div class="total-price">итого за заказ TODO </div> -->
+ <button type="submit"> оформить заказ </button>
+
+{% else %}
+    <h1>Тут пусто :( </h1>
+    <h2>отправляйтесь за покупками</h2>
+  {% endif %}      
+  
+    
+{% endblock %}
+
+
+
+ 
